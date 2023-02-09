@@ -32,10 +32,10 @@ const NavBar = () => {
               <NavButtons title="Esculturas" herf="#" />
             </li>
             <li className="nav-item">
-              <NavButtons title="Dibujo" herf="#" />
+              <NavButtons title="Dibujos" herf="#" />
             </li>
             <li className="nav-item">
-              <NavButtons title="Grabado" herf="#" />
+              <NavButtons title="Grabados" herf="#" />
             </li>
           </ul>
         </div>
