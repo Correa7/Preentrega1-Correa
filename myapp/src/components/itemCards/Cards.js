@@ -1,8 +1,9 @@
-import "./ItemListContainer.css";
+import "./ItemCards.css";
+import { Link } from "react-router-dom";
 
-const Card = ({ src, alt, title, precio }) => {
+const Card = ({ src, alt, title, precio, id }) => {
   return (
-    <div className="card">
+    <div key={id} className="card">
       <div className="card-img">
         <img src={src} alt={alt} />
       </div>
@@ -14,7 +15,12 @@ const Card = ({ src, alt, title, precio }) => {
         <h6 className="precio">
           <strong>Precio: $ {precio}</strong>
         </h6>
-        <button className="btn btn-secondary me-md-2">Buy</button>
+        <button className="btn btn-secondary me-md-2">
+          <Link className="Link" to={`/detail/${id}`}>
+            {" "}
+            View{" "}
+          </Link>
+        </button>
       </div>
     </div>
   );

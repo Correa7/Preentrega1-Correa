@@ -1,18 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/Navbar/Navbar'; 
-import CardsList from './components/Cards/CardsList';
-import ItemListContainer from './components/Cards/ItemListContainer';
-import Footer from './components/Footer/Footer';
+import "./App.css";
+import NavBar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
+import ItemListContainer from "./pages/itemListContainer/ItemListContainer";
+import ItemDetailContainer from "./pages/itemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <ItemListContainer greeting='Saludos CoderHouse'>
-        <CardsList/>
-      </ItemListContainer>
-      <Footer/>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<ItemListContainer greeting="Saludos CoderHouse" />}
+          />
+          <Route
+            exact
+            path="/categoria/:categoria"
+            element={<ItemListContainer />}
+          />
+          <Route exact path="/detail/:id" element={<ItemDetailContainer />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

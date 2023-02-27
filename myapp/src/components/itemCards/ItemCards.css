@@ -1,20 +1,15 @@
-.contenedor {
+.contenedor2 {
   padding-left: 30px;
   margin-top: 50px;
   margin-left: 30px;
   margin-bottom: 30px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 30px;
 }
-
 .tarjeta-body {
   width: 270px;
 }
 
 .card {
-  width: 250px;
+  width: 270px;
   transition: all 0.25s;
 }
 
@@ -78,4 +73,12 @@
   margin-top: 50px;
   padding: 40px;
   box-shadow: hsl(0, 93%, 49%) 0 0 16px;
+}
+.Link {
+  color: aliceblue;
+  text-decoration: none;
+  text-decoration-style: none;
+}
+.Link:hover {
+  color: #e3ebe3;
 }

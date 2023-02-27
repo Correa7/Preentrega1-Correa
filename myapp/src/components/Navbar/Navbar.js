@@ -1,10 +1,20 @@
 import "./navbar.css";
-import NavButtons from "./NavButtons";
 import CartIcon from "./NavCartIcon";
 import NavLogo from "./NavLogo";
-import Logo from "../img/logo.png";
+import Logo from "../../img/logo.png";
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
+
+const categoria = {
+  pintura:"Pintura",
+  dibujo:"Dibujo", 
+  escultura:"Escultura",
+  grabado:"Grabado"
+}
+
+
+
   return (
     <div className="nav-bar">
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -23,25 +33,26 @@ const NavBar = () => {
         <div id="ul" className="collapse navbar-collapse">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavButtons title="Home" herf="#" />
+            <NavLink to={'/'} className="nav-link" >Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavButtons title="Pinturas" herf="#" />
+            <NavLink to={`/categoria/${categoria.pintura}`} className="nav-link" >Pinturas</NavLink>
             </li>
             <li className="nav-item">
-              <NavButtons title="Esculturas" herf="#" />
+            <NavLink  to={`/categoria/${categoria.escultura}`} className="nav-link" >Esculturas </NavLink>
             </li>
             <li className="nav-item">
-              <NavButtons title="Dibujos" herf="#" />
+            <NavLink  to={`/categoria/${categoria.dibujo}`} className="nav-link" >Dibujos</NavLink>
             </li>
             <li className="nav-item">
-              <NavButtons title="Grabados" herf="#" />
+            <NavLink  to={`/categoria/${categoria.grabado}`} className="nav-link" >Grabados</NavLink>
+             
             </li>
           </ul>
         </div>
         <div className="cartContainer">
           <div className="collapse navbar-collapse">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav"> 
               <CartIcon items={0} />
             </ul>
           </div>
